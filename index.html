@@ -116,6 +116,15 @@ const arrowFunction1 = {
     }
 }
 console.log("Hey here is your Arrow function==>>", arrowFunction1.function());
+console.log(Object.prototype);
+
+const father = {lastName: "san"};
+const son ={lastName: "Yoga"};
+
+console.log("father", father);
+//Object.setPrototypeOf(son, father);
+console.log("son", son.__proto__);
+console.log("Object", Object.prototype);
 
     </script>
   </body>
