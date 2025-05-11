@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Click the button</h2>
+    <button onclick="object.methodExample()">Click Me</button>
+
+    <script>
+	
+	  const object = {
+	  id:1,
+	  firstName : "Yogesh",
+	  lastName : "snkar",
+
+	  methodExample: function(key) {
+	      
+	  const arrowFunction = () =>  console.log(this.firstName);
+	  arrowFunction();
+	  return this[key];
+	  }
+	  
+	  }
+	  
+       const arrowFunction = () => this;
+
+	  function test(){
+	  "use strict"
+	  return this;
+	  }
+	  
+	  const person = {
+    name: 'Pedro',
+    surname: 'Sanchez',
+    sayName: () => this.name + ' ' + this.surname
+}
+
+
+// console.log("protoType:::::::", person.Prototype.__proto__);
+
+//console.log(person.sayName());
+	  
+	 // test();// alway getting undefined in with or without strict mode
+	  //console.log("Object.methodExammple::::",object.methodExample("firstName"));
+	  //console.log("this is a function this", object.example());
+	  
+	 // console.log("hey here to clarify the test", test());
+	  //console.log("just print arrow function", object.methodExample());
+	  
+	  
+	  // global scope
+	  
+	  
+const e = 10;
+function sum(a) {
+  return function (b) {
+    return function (c) {
+      // outer functions scope
+      return function (d) {
+        // local scope
+        return a + b + c + d + e;
+      };
+    };
+  };
+}
+
+function makeAdder(x) {
+  return function (y) {
+    return x + y;
+  };
+}
+ function Circle(){}
+const arr = [];
+ 
+const circle = new Circle();
+// console.log(arr.prototype.__proto__ === makeAdder.prototype.__proto__);
+// console.log(Object.prototype);
+// console.log(Array.prototype);
+
+// console.log(Array.prototype === Object.prototype);
+
+// console.log(makeAdder.prototype === Object.__proto__);
+
+
+const add5 = makeAdder(5);
+const add10 = makeAdder(10);
+
+//console.log(add5(2)); // 7
+//console.log(add10(2)); // 12
+
+
+//console.log(sum(5)(2)(3)(4)); // 20
+
+console.log("Hey let see about this keyword", this);
+this.a = 5;
+console.log("Just call the Variable a = ", this.a);
+
+const currentObject = {
+    id:1,
+    name: "yoga",
+    gender: "Male",
+    function() {
+       console.log("hi",this);
+       return  this;
+        
+    }
+    
+}
+console.log("Hey here is the Object prperties::", currentObject.function());
+
+const arrowFunction1 = {
+    id:1,
+    myName:"Yoga",
+    function : () =>{
+      "use strict";
+      console.log("Hi I'm iside the arrow", this);
+        return this;
+    }
+}
+console.log("Hey here is your Arrow function==>>", arrowFunction1.function());
+
+    </script>
+  </body>
+</html>
