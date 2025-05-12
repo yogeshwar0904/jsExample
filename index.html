@@ -126,6 +126,14 @@ console.log("father", father);
 console.log("son", son.__proto__);
 console.log("Object", Object.prototype);
 
+navigator.geolocation.getCurrentPosition(
+    //Success Call back
+    position => console.log(position),
+    //Error Call back
+    error => console.error(error)
+    
+)
+
     </script>
   </body>
 </html>
