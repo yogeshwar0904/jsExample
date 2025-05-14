@@ -106,4 +106,19 @@ function syncAsyncExample2(){
      console.log("Im second Dood");
 }
 
-syncAsyncExample2();
+//syncAsyncExample2();
+//console.log("Im the new example started");
+
+Promise.resolve().then( () =>{
+    console.log("im the promise");
+})
+
+setTimeout(() => {
+ console.log("Im the set Time out");
+},100)
+
+queueMicrotask(()=>{
+    console.log(100);
+    // queueMicrotask(()=> console.log(5));
+})
+console.log("Last console");

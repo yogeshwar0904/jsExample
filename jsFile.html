@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Click the button</h2>
+<script>
+    function loginUser(username, password, getUserProfile) {
+  setTimeout(() => {
+    if (password === '1234') {
+      console.log('User logged in');
+     getUserProfile(null, { id: 1, username: username });
+    } else {
+      getUserProfile('Invalid password');
+    }
+  }, 1000);
+}
+
+function getUserProfile(userId, getUserPosts) {
+  setTimeout(() => {
+    console.log('Fetched user profile');
+    getUserPosts(null, { id: userId, username: 'yogeshwar', email: 'yogeshwar@example.com' });
+  }, 1000);
+}
+
+function getUserPosts(username, sendWelcomeEmail) {
+  setTimeout(() => {
+    console.log('Fetched user posts');
+    sendWelcomeEmail(null, ['Post 1', 'Post 2']);
+  }, 1000);
+}
+
+function sendWelcomeEmail(email, callback) {
+  setTimeout(() => {
+    console.log('Sent welcome email to', email);
+    callback(null, 'Email sent');
+  }, 1000);
+}
+
+// 🚨 Callback Hell in Action
+
+loginUser('yogeshwar', '1234', 
+function (err, user) {
+    console.log("loginUser", "yogesh");
+  if (err) {
+    console.log('Login failed:', err);
+  } else {
+    getUserProfile(user.id, function (err, profile) {
+      if (err) {
+        console.log('Profile fetch failed:', err);
+      } 
+
+    //   else {
+    //     getUserPosts(profile.username, function (err, posts) {
+    //       if (err) {
+    //         console.log('Posts fetch failed:', err);
+    //       } else {
+    //         sendWelcomeEmail(profile.email, function (err, status) {
+    //           if (err) {
+    //             console.log('Email failed:', err);
+    //           } else {
+    //             console.log('All done:', status);
+    //           }
+    //         });
+    //       }
+    //     });
+    //   }
+    });
+  }
+});
+    </script>
+  </body>
+</html>

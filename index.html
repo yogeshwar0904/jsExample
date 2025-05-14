@@ -126,14 +126,24 @@ console.log("father", father);
 console.log("son", son.__proto__);
 console.log("Object", Object.prototype);
 
-navigator.geolocation.getCurrentPosition(
-    //Success Call back
-    position => console.log(position),
-    //Error Call back
-    error => console.error(error)
+// navigator.geolocation.getCurrentPosition(
+//     //Success Call back
+//     position => console.log(position),
+//     //Error Call back
+//     error => console.error(error)
     
-)
-
+// )
+function education(){
+    return new Promise((resolve,reject) =>{
+        const isPass = true;
+        if(isPass){
+           resolve("You have passed");
+        } else{
+           reject("you have failed");
+        }
+    })
+}
+education();
     </script>
   </body>
 </html>
