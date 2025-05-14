@@ -121,4 +121,28 @@ queueMicrotask(()=>{
     console.log(100);
     // queueMicrotask(()=> console.log(5));
 })
-console.log("Last console");
+//console.log("Last console");
+
+function check(){
+    console.log("Im the check");
+ Promise.resolve().then(() =>{
+console.log("Promise A")
+})
+
+setTimeout(() => {
+  Promise.resolve().then(() =>{
+console.log("Promise B");
+  setTimeout(() => {
+  Promise.resolve().then(() =>{
+console.log("Promise c");
+})
+},0)
+})
+},0)
+
+ Promise.resolve().then(() =>{
+console.log("Promise D")
+})
+}
+
+check();

@@ -16,4 +16,3 @@ function vehicle(car) {
     console.log(car.name);
 }
 //someOther(vehicle);
-
