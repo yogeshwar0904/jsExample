@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Click the button</h2>
+    <button onclick="object.methodExample()">Click Me</button>
+
+    <script>
+	const subCompany = {
+    name:"element5",
+    totalEmployee:"200"
+}
+console.log(Object.getPrototypeOf(subCompany));
+const createExample = Object.create(subCompany);
+console.log("Hiiiiiiiiiii",Object.getPrototypeOf(createExample));
+console.log("create() Method Example::::::createExample", Object.getPrototypeOf(createExample) === subCompany);
+console.log("create() Method Example::::::subCompany", Object.getPrototypeOf(subCompany));
+
+    </script>
+  </body>
+</html>
