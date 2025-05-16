@@ -15,6 +15,21 @@ console.log("Hiiiiiiiiiii",Object.getPrototypeOf(createExample));
 console.log("create() Method Example::::::createExample", Object.getPrototypeOf(createExample) === subCompany);
 console.log("create() Method Example::::::subCompany", Object.getPrototypeOf(subCompany));
 
+
+const people = [
+  { name: 'Alice', gender: 'female' },
+  { name: 'Bob', gender: 'male' },
+  { name: 'Eve', gender: 'female' },
+];
+const grouped = people.reduce((accelorator, group) => {
+
+  accelorator[group.gender] = accelorator[group.gender] || [];
+   accelorator[group.gender].push(group.name);
+   return accelorator;
+},{})
+
+console.log(grouped);
+
     </script>
   </body>
 </html>

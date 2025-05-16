@@ -69,7 +69,66 @@ cloths.isAvailable = true;
 console.log("seal() method Example:::: after", cloths);
 
 /*
-map() 
+map() It specifically design for Array. If we want to use Map we 
+must use keys(), values(), entries() because we don't directly Iterate 
+plain object need to convert to array.
+
+fromEntries() - convert Array to object.
+entries() - return key and velue of an Object.
+filter() - help to filter values based on condition inside the function.
+map() - Iterate and return the value. 
 */
+const num = {
+    a:1,
+    b:2,
+    c:3
+};
+// console.log("Hey Bacga I'm the entries() example",Object.entries(num));
+const iteration = Object.fromEntries(Object.entries(num).filter(([_,value]) => { return  value >1}).map(([key,value])=>{
+   return [key,value*2]
+}))
+console.log("hey I'm the Map function::::" ,iteration);
 
+// Reduce()
 
+const numReduce = 
+    Object.entries(num).reduce((acc,[ _,value]) => {value = acc +value; return  value},0)
+;  
+console.log("reduce() Example:::::::::",numReduce);
+
+// example 2
+ const newReduce = 
+    Object.entries(num).reduce((accumulator, [key, value]) =>{
+        if(value>1){
+            accumulator[key] = value + 10
+        }
+        return accumulator;
+    },{})
+ ;
+ console.log("create new object using reduce() ", newReduce);
+
+ // Example 3
+const basket = ['Potato','Apple', 'Grapes', 'Grapes', 'Grapes', 'Potato']
+
+const useReduce = basket.reduce( (accelorator, fruites) => {
+accelorator[fruites] = (accelorator[fruites] || 0) + 1
+return accelorator;
+},{});
+
+console.log("Hey I'm the fruites:::::::", useReduce);
+
+// Example 4 
+const people = [
+  { name: 'Alice', gender: 'female' },
+  { name: 'Bob', gender: 'male' },
+  { name: 'Eve', gender: 'female' },
+];
+
+const grouped = people.reduce((accelorator, group) => {
+
+  accelorator[group.gender] = accelorator[group .gender] || [];
+   accelorator[group.gender].push(group.name);
+   return accelorator;
+},{})
+
+console.log(grouped); // { female: ['Alice', 'Eve'], male: ['Bob'] }
