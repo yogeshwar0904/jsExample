@@ -132,3 +132,83 @@ const grouped = people.reduce((accelorator, group) => {
 },{})
 
 console.log(grouped); // { female: ['Alice', 'Eve'], male: ['Bob'] }
+
+/*
+forEach(). It apply directly on arry not for plain Object.
+It returns a undefined.
+*/
+
+const forEachExample = Object.entries(num).forEach(([key, value]) => {
+   console.log(`${key}:${value}`)
+});
+
+/*
+some() It return a true or false.
+*/
+
+const someExample = Object.entries(num).some(([key, value]) => {return value === 1});
+
+console.log('some() example ', someExample);
+
+/*
+every() IT return true or false.
+Condition: IT check all the value pass the given condition.
+*/
+
+const evryExample = Object.entries(num).every(([key, value]) => {return value >0});
+
+console.log("Hey every() example:::",evryExample);
+
+/*
+include(). If the array contains the given value it return true.
+*/
+
+const isIncude = Object.values(num).includes(3);
+
+console.log("Hey I'm the include method:::::", isIncude);
+
+const arrayExample = [11,12,13,14];
+//Array.length method
+console.log("Hey I'm the lengthExample:::", arrayExample[arrayExample.length -4]);
+
+/*
+Array.indexOf()
+it return the index of thr element if not exist it return -1
+*/
+console.log("Hey I'm the indexOf::::", arrayExample.indexOf(14));
+
+//Array.pop it removes the last element
+arrayExample.pop(14);
+console.log("Hey I'm the pop::::", arrayExample);
+
+arrayExample.push(14);
+console.log("Hey I'm the push::::",arrayExample);
+/*
+slice(). 
+With single parameter slice(1) it remove the first element from the Array.
+with double parameter slice(0,2) it keep upto 1 element from 2 it remove all.
+*/
+console.log("Hey I'm the slice::::0",arrayExample.slice(0));
+console.log("Hey I'm the slice::::1",arrayExample.slice(1));
+console.log("Hey I'm the slice::::2",arrayExample.slice(1,3));
+console.log("Hey I'm the slice::::3",arrayExample.slice(3));
+console.log("Hey I'm the slice::::4",arrayExample.slice(4));
+
+/*
+shift() it remove the first element from the Array
+*/
+
+arrayExample.shift();
+console.log("Hey I'm the shift::::4",arrayExample);
+arrayExample.shift();
+console.log("Hey I'm the shift::::4",arrayExample);
+const arr = [1, 2, 3];
+arr.shift();
+console.log(arr);
+
+// unShift() add the element to the first index
+const unShiftExample = [7,8,9,10];
+unShiftExample.unshift(1);
+console.log("unShift method Example::::", unShiftExample);
+
+
