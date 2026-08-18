@@ -13,20 +13,20 @@ test(
       await page.goto('https://my-stage.reya.net/');
     });
 
-//     await test.step('Verify that the \'reya\' brand text is displayed in the landing page header', async () => {
-//       await expect(page.locator('div.Landing_wrap__z2YSE').locator('div.Landing_brand__IzWLL').getByText("reya")).toContainText('reya');
-//     });
+    await test.step('Verify that the \'reya\' brand text is displayed in the landing page header', async () => {
+      await expect(page.locator('div.Landing_wrap__z2YSE').locator('div.Landing_brand__IzWLL').getByText("reya")).toContainText('reya');
+    });
 
     await test.step('Verify that \'How would you like your service?\' text is not visible', async () => {
       await expect(page.getByText("How would you like your service?", { exact: true })).not.toBeVisible();
     });
 
-//     await test.step('Make GET API request to https://jsonplaceholder.typicode.com/posts?userId=1 and verify response status is 200', async () => {
-//       const apiResponse4 = await request.fetch('https://jsonplaceholder.typicode.com/posts?userId=1', {
-//         method: 'GET',
-//       });
-//       expect(apiResponse4.status()).toBe(200);
-//     });
+    await test.step('Make GET API request to https://jsonplaceholder.typicode.com/posts?userId=1 and verify response status is 200', async () => {
+      const apiResponse4 = await request.fetch('https://jsonplaceholder.typicode.com/posts?userId=1', {
+        method: 'GET',
+      });
+      expect(apiResponse4.status()).toBe(200);
+    });
 
     await test.step('Verify that \'Lab & Imaging at Home\' text is displayed', async () => {
       await expect(page.getByText("Lab & Imaging at Home", { exact: true })).toContainText('Lab & Imaging at Home');
@@ -40,12 +40,12 @@ test(
       await expect(page.getByText("How would you like your service?", { exact: true })).toContainText('How would you like your service?');
     });
 
-//     await test.step('Make GET API request to https://api.practicesoftwaretesting.com/users?page=0 and verify response status is 401', async () => {
-//       const apiResponse8 = await request.fetch('https://api.practicesoftwaretesting.com/users?page=0', {
-//         method: 'GET',
-//       });
-//       expect(apiResponse8.status()).toBe(401);
-//     });
+    await test.step('Make GET API request to https://api.practicesoftwaretesting.com/users?page=0 and verify response status is 401', async () => {
+      const apiResponse8 = await request.fetch('https://api.practicesoftwaretesting.com/users?page=0', {
+        method: 'GET',
+      });
+      expect(apiResponse8.status()).toBe(401);
+    });
 
   }
 );
