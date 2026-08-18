@@ -21,12 +21,12 @@ test(
       await expect(page.getByText("How would you like your service?", { exact: true })).not.toBeVisible();
     });
 
-//     await test.step('GET https://jsonplaceholder.typicode.com/posts?userId=1', async () => {
-//       const apiResponse4 = await request.fetch('https://jsonplaceholder.typicode.com/posts?userId=1', {
-//         method: 'GET',
-//       });
-//       expect(apiResponse4.status()).toBe(200);
-//     });
+    await test.step('GET https://jsonplaceholder.typicode.com/posts?userId=1', async () => {
+      const apiResponse4 = await request.fetch('https://jsonplaceholder.typicode.com/posts?userId=1', {
+        method: 'GET',
+      });
+      expect(apiResponse4.status()).toBe(200);
+    });
 
     await test.step('assert hasText', async () => {
       await expect(page.getByText("Lab & Imaging at Home", { exact: true })).toContainText('Lab & Imaging at Home');
@@ -36,9 +36,9 @@ test(
       await page.getByRole("button", { name: "Book Now →", exact: true }).click();
     });
 
-//     await test.step('assert hasText', async () => {
-//       await expect(page.getByText("How would you like your service?", { exact: true })).toContainText('How would you like your service?');
-//     });
+    await test.step('assert hasText', async () => {
+      await expect(page.getByText("How would you like your service?", { exact: true })).toContainText('How would you like your service?');
+    });
 
     await test.step('Retrieve all users', async () => {
       const apiResponse8 = await request.fetch('https://api.practicesoftwaretesting.com/users?page=0', {
