@@ -28,9 +28,9 @@ test(
       expect(apiResponse4.status()).toBe(200);
     });
 
-//     await test.step('Verify that \'Lab & Imaging at Home\' text is displayed', async () => {
-//       await expect(page.getByText("Lab & Imaging at Home", { exact: true })).toContainText('Lab & Imaging at Home');
-//     });
+    await test.step('Verify that \'Lab & Imaging at Home\' text is displayed', async () => {
+      await expect(page.getByText("Lab & Imaging at Home", { exact: true })).toContainText('Lab & Imaging at Home');
+    });
 
     await test.step('Click the \'Book Now →\' button', async () => {
       await page.getByRole("button", { name: "Book Now →", exact: true }).click();
@@ -44,16 +44,24 @@ test(
       await expect(page.getByText("Terms of Use", { exact: true })).toContainText('Terms of Use');
     });
 
-//     await test.step('Verify that \'Non-Discrimination Notice\' text is displayed', async () => {
-//       await expect(page.getByText("Non-Discrimination Notice", { exact: true })).toContainText('Non-Discrimination Notice');
-//     });
+    await test.step('Verify that \'Non-Discrimination Notice\' text is displayed', async () => {
+      await expect(page.getByText("Non-Discrimination Notice", { exact: true })).toContainText('Non-Discrimination Notice');
+    });
 
-//     await test.step('Make GET API request to https://api.practicesoftwaretesting.com/users?page=0 and verify response status is 401', async () => {
-//       const apiResponse10 = await request.fetch('https://api.practicesoftwaretesting.com/users?page=0', {
-//         method: 'GET',
-//       });
-//       expect(apiResponse10.status()).toBe(401);
-//     });
+    await test.step('Make GET API request to https://api.practicesoftwaretesting.com/users?page=0 and verify response status is 401', async () => {
+      const apiResponse10 = await request.fetch('https://api.practicesoftwaretesting.com/users?page=0', {
+        method: 'GET',
+      });
+      expect(apiResponse10.status()).toBe(401);
+    });
+
+    await test.step('Click on element located by xpath=(//div)[17]', async () => {
+      await page.locator("xpath=(//div)[17]").click();
+    });
+
+    await test.step('Click on element located by xpath=(//div)[13]', async () => {
+      await page.locator("xpath=(//div)[13]").click();
+    });
 
   }
 );
