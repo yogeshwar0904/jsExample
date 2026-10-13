@@ -14,7 +14,7 @@ test(
     });
 
     await test.step('#02 - Click on the \'Username\' textbox', async () => {
-      await page.getByRole("textbox", { name: "Username", exact: true }).click();
+      await page.getByRole("textbox").click();
     });
 
     await test.step('#03 - Enter \'standard_user\' in the \'Username\' textbox', async () => {
