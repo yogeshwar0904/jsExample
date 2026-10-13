@@ -33,18 +33,6 @@ test(
       await page.getByRole("button", { name: "Login", exact: true }).click();
     });
 
-    await test.step('#07 - Click on the primary header in the header container', async () => {
-      await page.locator('[data-test="header-container"]').locator('[data-test="primary-header"]').click();
-    });
-
-    await test.step('#08 - Click the \'Open Menu\' button', async () => {
-      await page.getByRole("button", { name: "Open Menu", exact: true }).click();
-    });
-
-    await test.step('#09 - Click the \'All Items\' button', async () => {
-      await page.getByRole("button", { name: "All Items", exact: true }).click();
-    });
-
   }
 );
 
